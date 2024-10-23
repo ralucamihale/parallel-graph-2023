@@ -165,8 +165,6 @@ os_threadpool_t *create_threadpool(unsigned int num_threads)
 void destroy_threadpool(os_threadpool_t *tp)
 {
 	os_list_node_t *n, *p;
-
-	/* TODO: Cleanup synchronization data. */
 	pthread_mutex_destroy(&tp->mutexQueue);
 	pthread_cond_destroy(&tp->condition);
 
